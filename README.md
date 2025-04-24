@@ -1,2 +1,125 @@
-# appforsolista
-hi
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FATAL SYSTEM BREACH</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: red;
+      font-family: 'Courier New', Courier, monospace;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 60px;
+      text-align: center;
+      color: #ff0000;
+      text-shadow: 0 0 15px red;
+      animation: shake 0.2s infinite;
+    }
+
+    h2 {
+      font-size: 30px;
+      text-align: center;
+      margin-top: 0;
+      animation: flicker 1s infinite alternate;
+    }
+
+    #details {
+      padding: 20px;
+      font-size: 20px;
+      color: #00ff00;
+      animation: typing 6s steps(40) 1 forwards;
+    }
+
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+      100% { transform: translateX(0); }
+    }
+
+    @keyframes flicker {
+      from { opacity: 1; }
+      to { opacity: 0.2; }
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    #flash {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: red;
+      opacity: 0;
+      animation: flash 0.2s infinite alternate;
+      z-index: 999;
+    }
+
+    @keyframes flash {
+      from { opacity: 0.1; }
+      to { opacity: 0.4; }
+    }
+
+    #btn {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: black;
+      color: white;
+      border: 3px solid red;
+      padding: 20px 40px;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="flash"></div>
+
+  <h1>⚠️ SYSTEM BREACH DETECTED ⚠️</h1>
+  <h2>💀 You are being watched 💀</h2>
+
+  <div id="details">
+    📡 Accessing your Camera...<br>
+    🔓 Device Unlocked Remotely<br>
+    💾 Downloading 2127 files...<br>
+    📸 Photos - ✔️ | 🎥 Videos - ✔️ | 📁 Chats - ✔️<br><br>
+    🔥 Your private data is being sold online!<br>
+    ⏳ SYSTEM WIPE IN: 10 SECONDS<br>
+  </div>
+
+  <button id="btn" onclick="boom()">PLEASE HELP ME!</button>
+
+  <audio id="scream" autoplay>
+    <source src="https://www.myinstants.com/media/sounds/wilhelm.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function boom() {
+      document.getElementById("btn").remove();
+      document.getElementById("details").innerHTML = `
+        💣 TOO LATE.<br>
+        All your files are gone.<br>
+        Goodbye forever...<br><br>
+        💀💀💀
+      `;
+      let evilLaugh = new Audio("https://www.myinstants.com/media/sounds/evil-laugh.mp3");
+      evilLaugh.play();
+    }
+  </script>
+</body>
+</html>
